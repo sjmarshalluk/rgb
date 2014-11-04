@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Real</title>
+  <title>Real Good Beer</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<header>
+	<nav>
+		<%= link_to "Real Good Beer", root_path %>
+		<%= link_to "Breweries", breweries_path %>
+	</nav>
+</header>
 
 <%= yield %>
 

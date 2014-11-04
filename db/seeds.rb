@@ -1,7 +1,76 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Brewery.create(
+	[
+		{ 
+			name: "Beavertown", 
+			brewery_type: "Micro",
+			description: "Started in 2012, its one of the best",
+			year_opened: 20120101,
+			year_closed: 20120131,
+			head_brewer: "James Rylance",
+			founder: "Logan Plant",
+			core_range: "Gamma Ray, Neck Oil, Smog Rocket, 8 Ball",
+			seasonals: true,
+			changing: true,
+			where_to_buy: "Eebria",
+			website: "http://www.beavertown.com",
+			twitter: "http://www.twitter.com/beavertown",
+			facebook: "http://www.facebook.com/beavertown",
+			instagram: "http://www.instagram.com/beavertown",
+			untappd: "http://www.untappd.com/beavertown",
+			ratebeer: "http://www.ratebeer.com/beavertown",
+			drink_at_brewery: true,
+			monday_open: 120000,
+			monday_close: 180000,
+			tuesday_open: 120000,
+			tuesday_close: 180000,
+			wednesday_open: 120000,
+			wednesday_close: 180000,
+			thursday_open: 120000,
+			thursday_close: 180000,
+			friday_open: 120000,
+			friday_close: 180000,
+			saturday_open: 120000,
+			saturday_close: 180000,
+			sunday_open: 120000,
+			sunday_close: 180000,
+			drink_at_brewery_description: "In an industrial estate"
+
+		},
+		{
+			name: "Fourpure", 
+			brewery_type: "Micro",
+			description: "First to can their core range",
+			year_opened: 20110201,
+			year_closed: 20120131,
+			head_brewer: "Dave",
+			founder: "Tom and Dave",
+			core_range: "Pale, Stout, Pils",
+			seasonals: true,
+			changing: false,
+			where_to_buy: "Eebria",
+			website: "http://www.fourpure.com",
+			twitter: "http://www.twitter.com/fourpure",
+			facebook: "http://www.facebook.com/fourpure",
+			instagram: "http://www.instagram.com/fourpure",
+			untappd: "http://www.untappd.com/fourpure",
+			ratebeer: "http://www.ratebeer.com/fourpure",
+			drink_at_brewery: true,
+			monday_open: 120000,
+			monday_close: 180000,
+			tuesday_open: 120000,
+			tuesday_close: 180000,
+			wednesday_open: 120000,
+			wednesday_close: 180000,
+			thursday_open: 120000,
+			thursday_close: 180000,
+			friday_open: 120000,
+			friday_close: 180000,
+			saturday_open: 120000,
+			saturday_close: 180000,
+			sunday_open: 120000,
+			sunday_close: 180000,
+			drink_at_brewery_description: "Part of the Bermondsey beer mile"
+		}
+	]
+)
