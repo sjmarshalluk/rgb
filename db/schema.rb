@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141107141536) do
+ActiveRecord::Schema.define(version: 20141108094020) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -51,7 +51,6 @@ ActiveRecord::Schema.define(version: 20141107141536) do
     t.string   "brewery_type"
     t.text     "description"
     t.date     "year_opened"
-    t.date     "year_closed"
     t.string   "head_brewer"
     t.string   "founder"
     t.text     "core_range"
@@ -66,20 +65,6 @@ ActiveRecord::Schema.define(version: 20141107141536) do
     t.string   "untappd"
     t.string   "ratebeer"
     t.boolean  "drink_at_brewery"
-    t.time     "monday_open"
-    t.time     "monday_close"
-    t.time     "tuesday_open"
-    t.time     "tuesday_close"
-    t.time     "wednesday_open"
-    t.time     "wednesday_close"
-    t.time     "thursday_open"
-    t.time     "thursday_close"
-    t.time     "friday_open"
-    t.time     "friday_close"
-    t.time     "saturday_open"
-    t.time     "saturday_close"
-    t.time     "sunday_open"
-    t.time     "sunday_close"
     t.text     "drink_at_brewery_description"
     t.datetime "created_at"
     t.datetime "updated_at"
