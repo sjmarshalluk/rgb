@@ -1,9 +1,14 @@
 class BreweriesController < ApplicationController
   def index
-  	@breweries = Brewery.all
+    if params[:search].present?
+      @breweries = Brewery.near(params[:search], 10)
+    else
+  	  @breweries = Brewery.all
+    end
   end
 
   def show
+  	@brewery = Brewery.find(params[:id])
   end
 
   def new
@@ -21,6 +26,27 @@ class BreweriesController < ApplicationController
   	end
   end
 
+  def edit
+    @brewery = Brewery.find(params[:id])
+  end
+
+  def update
+    @brewery = Brewery.find(params[:id])
+    if @brewery.update(brewery_params)
+      flash[:success] = "Changes saved"
+      redirect_to root_path
+    else
+      flash[:error] = "Nope"
+      render :new
+    end
+  end
+
+  def destroy
+    @brewery = Brewery.find(params[:id])
+    @brewery.delete
+    flash[:success] = "Deleted"
+    redirect_to root_path
+  end
 
 
   private
@@ -58,7 +84,10 @@ class BreweriesController < ApplicationController
   		:saturday_close,
   		:sunday_open,
   		:sunday_close,
-  		:drink_at_brewery_description
+  		:drink_at_brewery_description,
+  		:address,
+  		:latitude,
+  		:longitude
   	)
   end
 

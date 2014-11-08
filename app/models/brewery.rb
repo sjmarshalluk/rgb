@@ -18,6 +18,8 @@ class Brewery < ActiveRecord::Base
 	validates :untappd, presence: true
 	validates :ratebeer, presence: true
 
+  	geocoded_by :address
+	after_validation :geocode
 
 
 end

@@ -1,2 +1,50 @@
-<h1>Breweries#show</h1>
-<p>Find me in app/views/breweries/show.html.erb</p>
+	
+
+	<p><%= @brewery.name %></p>
+	<p><%= @brewery.address %></p>
+	<p><%= @brewery.latitude %></p>
+	<p><%= @brewery.longitude %></p>
+	<p><%= @brewery.brewery_type %></p>
+	<p><%= @brewery.description %></p>
+	<p><%= @brewery.year_opened %></p>
+	<p><%= @brewery.year_closed %></p>
+	<p><%= @brewery.head_brewer %></p>
+	<p><%= @brewery.founder %></p>
+	<p><%= @brewery.core_range %></p>
+	<p><%= @brewery.seasonals %></p>
+	<p><%= @brewery.changing %></p>
+	<p><%= @brewery.where_to_buy %></p>
+	<p><%= @brewery.website %></p>
+	<p><%= @brewery.twitter %></p>
+	<p><%= @brewery.facebook %></p>
+	<p><%= @brewery.instagram %></p>
+	<p><%= @brewery.untappd %></p>
+	<p><%= @brewery.ratebeer %></p>
+	<p><%= @brewery.drink_at_brewery %></p>
+	<p><%= @brewery.monday_open %></p>
+	<p><%= @brewery.monday_close %></p>
+	<p><%= @brewery.tuesday_open %></p>
+	<p><%= @brewery.tuesday_close %></p>
+	<p><%= @brewery.wednesday_open %></p>
+	<p><%= @brewery.wednesday_close %></p>
+	<p><%= @brewery.thursday_open %></p>
+	<p><%= @brewery.thursday_close %></p>
+	<p><%= @brewery.friday_open %></p>
+	<p><%= @brewery.friday_close %></p>
+	<p><%= @brewery.saturday_open %></p>
+	<p><%= @brewery.saturday_close %></p>
+	<p><%= @brewery.sunday_open %></p>
+	<p><%= @brewery.sunday_close %></p>
+	<p><%= @brewery.drink_at_brewery_description %></p>
+
+
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@brewery.latitude}%2C#{@brewery.longitude}" %>
+
+
+
+<h3>Nearby breweries</h3>
+<ul>
+<% for brewery in @brewery.nearbys(10) %>
+  <li><%= link_to brewery.address, brewery %> (<%= brewery.distance.round(2) %> miles)</li>
+<% end %>
+</ul>
