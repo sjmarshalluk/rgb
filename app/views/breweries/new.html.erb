@@ -1,24 +1,99 @@
 
+<h1>Add a brewery</h1>
+<p>Use this form to suggest a brewery for us to list. 
+
 <%= simple_form_for @brewery do |f| %>
-	<%= f.input :name %>
-	<%= f.input :address %>
-	<%= f.input :brewery_type %>
-	<%= f.input :description %>
-	<%= f.input :year_opened %>
-	<%= f.input :head_brewer %>
-	<%= f.input :founder %>
-	<%= f.input :core_range %>
-	<%= f.input :seasonals %>
-	<%= f.input :changing %>
-	<%= f.input :where_to_buy %>
-	<%= f.input :website %>
-	<%= f.input :twitter %>
-	<%= f.input :facebook %>
-	<%= f.input :instagram %>
-	<%= f.input :untappd %>
-	<%= f.input :ratebeer %>
-	<%= f.input :drink_at_brewery %>
-	<%= f.input :drink_at_brewery_description %>
+	<section>
+		<div class="row">
+			<%= f.input :name, label: "Brewery Name", wrapper_html: { class: 'c12' } %>
+		</div>
+		<div class="row">
+			<%= f.input :address, label: "Brewery Address", wrapper_html: { class: 'c12' } %>
+		</div>
+		<div class="row">
+			<%= f.input :website, wrapper_html: { class: 'c12' } %>
+		</div>
+	</section>
+	<p>That's all we really need from you, but if you are able to add any of the details below, it would really help us out!</p>
+	<section>
+		<h2>About the brewery</h2>
+		<div class="row">
+			<%= f.input :image, wrapper_html: { class: 'c12' } %>
+		</div>
+		<div class="row">
+			<%= f.input :brewery_type, :label => "Brewery type", :collection => ["micro","brewpub"], wrapper_html: { class: 'c6' } %>
+			<%= f.input :year_opened, wrapper_html: { class: 'c3' } %>
+		</div>
+		<div class="row">
+			<%= f.input :description, wrapper_html: { class: 'c12' } %>
+		</div>
+		<div class="row">
+			<%= f.input :head_brewer, wrapper_html: { class: 'c6' } %>
+			<%= f.input :founder, wrapper_html: { class: 'c6' } %>
+		</div>
+	</section>
+	<section>
+		<h2>About the beers</h2>
+		<div class="row">
+			<%= f.input :core_beer_one, wrapper_html: { class: 'c6' } %>
+			<%= f.input :core_beer_two, wrapper_html: { class: 'c6' } %>
+		</div>
+		<div class="row">
+			<%= f.input :core_beer_three, wrapper_html: { class: 'c6' } %>
+			<%= f.input :core_beer_four, wrapper_html: { class: 'c6' } %>
+		</div>
+		<div class="row">
+			<%= f.input :core_beer_five, wrapper_html: { class: 'c6' } %>
+			<%= f.input :core_beer_six, wrapper_html: { class: 'c6' } %>
+		</div>
+		<div class="row">
+			<%= f.input :core_beer_seven, wrapper_html: { class: 'c6' } %>
+			<%= f.input :core_beer_eight, wrapper_html: { class: 'c6' } %>
+		</div>
+		<div class="row">
+			<%= f.input :core_beer_nine, wrapper_html: { class: 'c6' } %>
+			<%= f.input :core_beer_ten, wrapper_html: { class: 'c6' } %>
+		</div>
+		<div class="row">
+			<%= f.input :seasonals, label: "This brewery makes seasonal brews", wrapper_html: { class: 'c12 boolean' } %>
+			<%= f.input :changing, label: "This brewery constantly change the beers they make", wrapper_html: { class: 'c12 boolean' } %>
+		</div>
+		<div class="row">
+			<%= f.input :where_to_buy, wrapper_html: { class: 'c12' } %>
+		</div>
+	</section>
+	<section>
+		<h2>Contact details</h2>
+		<div class="row">
+			<%= f.input :telephone, wrapper_html: { class: 'c12' } %>
+		</div>
+		<div class="row">
+			<%= f.input :twitter, wrapper_html: { class: 'c12' } %>
+		</div>
+		<div class="row">
+			<%= f.input :facebook, wrapper_html: { class: 'c12' } %>
+		</div>
+		<div class="row">
+			<%= f.input :instagram, wrapper_html: { class: 'c12' } %>
+		</div>
+		<div class="row">
+			<%= f.input :untappd, wrapper_html: { class: 'c12' } %>
+		</div>
+		<div class="row">
+			<%= f.input :ratebeer, wrapper_html: { class: 'c12' } %>
+		</div>
+	</section>
+	<section>
+		<h2>Visiting the the brewery</h2>
+		<div class="row">
+			<%= f.input :drink_at_brewery, label: "Can you drink at the brewery?", wrapper_html: { class: 'c12 boolean' } %>
+			<%= f.input :tours, label: "Does this brewery offer tours?", wrapper_html: { class: 'c12 boolean' } %>
+		</div>
+		<div class="row">
+			<%= f.input :drink_at_brewery_description, label: "How to visit the brewery", wrapper_html: { class: 'c12' }  %>
+			<p>Include details on when the brewery is open for on sales and how to book tours, if applicable.</p>
+		</div>
+	</section>
 
 	<%= f.submit %>
 <% end %>

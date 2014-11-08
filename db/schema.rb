@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141108094020) do
+ActiveRecord::Schema.define(version: 20141108123103) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -50,14 +50,13 @@ ActiveRecord::Schema.define(version: 20141108094020) do
     t.string   "name"
     t.string   "brewery_type"
     t.text     "description"
-    t.date     "year_opened"
+    t.string   "year_opened"
     t.string   "head_brewer"
     t.string   "founder"
-    t.text     "core_range"
     t.boolean  "seasonals"
     t.boolean  "changing"
     t.integer  "rating"
-    t.text     "where_to_buy"
+    t.string   "where_to_buy"
     t.string   "website"
     t.string   "twitter"
     t.string   "facebook"
@@ -71,6 +70,23 @@ ActiveRecord::Schema.define(version: 20141108094020) do
     t.string   "address"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "core_beer_one"
+    t.string   "core_beer_two"
+    t.string   "core_beer_three"
+    t.string   "core_beer_four"
+    t.string   "core_beer_five"
+    t.string   "core_beer_six"
+    t.string   "core_beer_seven"
+    t.string   "core_beer_eight"
+    t.string   "core_beer_nine"
+    t.string   "core_beer_ten"
+    t.boolean  "approved"
+    t.string   "telephone"
+    t.boolean  "tours"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
 end

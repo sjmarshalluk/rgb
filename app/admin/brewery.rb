@@ -10,7 +10,16 @@ ActiveAdmin.register Brewery do
       :year_opened,
       :head_brewer,
       :founder,
-      :core_range,
+      :core_beer_one,
+      :core_beer_two,
+      :core_beer_three,
+      :core_beer_four,
+      :core_beer_five,
+      :core_beer_six,
+      :core_beer_seven,
+      :core_beer_eight,
+      :core_beer_nine,
+      :core_beer_ten,
       :seasonals,
       :changing,
       :where_to_buy,
@@ -24,7 +33,11 @@ ActiveAdmin.register Brewery do
       :drink_at_brewery_description,
       :address,
       :latitude,
-      :longitude
+      :longitude,
+      :approved,
+      :telephone,
+      :tours,
+      :image
     ]
     end
   end

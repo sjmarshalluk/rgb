@@ -1,9 +1,12 @@
 class BreweriesController < ApplicationController
+
+  helper_method :sort_column, :sort_direction
+
   def index
     if params[:search].present?
       @breweries = Brewery.near(params[:search], 10)
     else
-  	  @breweries = Brewery.all
+      @breweries = Brewery.order(sort_column + " " + sort_direction)
     end
   end
 
@@ -50,6 +53,16 @@ class BreweriesController < ApplicationController
 
 
   private
+
+  def sort_column
+    Brewery.column_names.include?(params[:sort]) ? params[:sort] : "name"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+
+
   def brewery_params
   	params.require(:brewery).permit(
   		:name, 
@@ -58,7 +71,16 @@ class BreweriesController < ApplicationController
   		:year_opened,
   		:head_brewer,
   		:founder,
-  		:core_range,
+  		:core_beer_one,
+      :core_beer_two,
+      :core_beer_three,
+      :core_beer_four,
+      :core_beer_five,
+      :core_beer_six,
+      :core_beer_seven,
+      :core_beer_eight,
+      :core_beer_nine,
+      :core_beer_ten,
   		:seasonals,
   		:changing,
   		:where_to_buy,
@@ -72,7 +94,11 @@ class BreweriesController < ApplicationController
   		:drink_at_brewery_description,
   		:address,
   		:latitude,
-  		:longitude
+  		:longitude,
+      :approved,
+      :telephone,
+      :tours,
+      :image
   	)
   end
 

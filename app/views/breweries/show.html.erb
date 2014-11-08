@@ -1,5 +1,5 @@
 	
-
+	<p><%= image_tag @brewery.image.url(:thumb) %></p>
 	<p><%= @brewery.name %></p>
 	<p><%= @brewery.address %></p>
 	<p><%= @brewery.latitude %></p>
@@ -9,7 +9,6 @@
 	<p><%= @brewery.year_opened %></p>
 	<p><%= @brewery.head_brewer %></p>
 	<p><%= @brewery.founder %></p>
-	<p><%= @brewery.core_range %></p>
 	<p><%= @brewery.seasonals %></p>
 	<p><%= @brewery.changing %></p>
 	<p><%= @brewery.where_to_buy %></p>
@@ -23,13 +22,13 @@
 	<p><%= @brewery.drink_at_brewery_description %></p>
 
 
-<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@brewery.latitude}%2C#{@brewery.longitude}" %>
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=800x300&sensor=false&zoom=16&markers=#{@brewery.latitude}%2C#{@brewery.longitude}" %>
 
 
 
 <h3>Nearby breweries</h3>
 <ul>
 <% for brewery in @brewery.nearbys(10) %>
-  <li><%= link_to brewery.address, brewery %> (<%= brewery.distance.round(2) %> miles)</li>
+  <li><%= link_to brewery.name, brewery %> (<%= brewery.distance.round(2) %> miles)</li>
 <% end %>
 </ul>

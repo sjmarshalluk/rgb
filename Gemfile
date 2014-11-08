@@ -55,5 +55,6 @@ gem 'simple_form'
 gem "geocoder"
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
+gem 'paperclip'
 
 ruby '2.1.2'

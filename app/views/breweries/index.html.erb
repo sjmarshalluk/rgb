@@ -1,5 +1,5 @@
 
-
+<%= link_to "Submit a brewery", new_brewery_path %>
 
 <%= form_tag breweries_path, :method => :get do %>
   <p>
@@ -8,12 +8,21 @@
   </p>
 <% end %>
 
-<ul class="location">
+<div class="order_by">
+	<%= sortable "name", "brewery name" %>
+	<%= sortable "year_opened", "Year" %>
+</div>
+
+<ul id="breweries">
 <% @breweries.each do |brewery| %>
-	<li>
-		<h3><%= link_to brewery[:name], brewery_path(brewery) %></h3>
-		<p><%= brewery.brewery_type %></p>
-		<p><%= brewery.drink_at_brewery %></p>
+	<li class="row">
+		<%= link_to brewery_path(brewery) do %>
+			<%= image_tag brewery.image.url(:thumb), class: "c2" %>
+			<div class="c10 brewery">
+				<h1><%= brewery.name %></h1>
+				<p><%= brewery.address %></p>
+			</div>
+		<% end %>
 	</li>
 <% end %>
 </ul>
