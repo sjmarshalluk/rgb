@@ -9,19 +9,28 @@
 
 </head>
 <body>
-<div class="wrapper">
-	<header>
-		<nav>
-			<%= link_to "Real Good Beer", root_path %>
-			<%= link_to "Breweries", breweries_path %>
-		</nav>
-	</header>
-	<% flash.each do |key,value| %>
-		<div class="<%= key %>">
-			<p><%= value %></p>
-		</div>
-	<% end %>
 
+<header>
+	<div class="wrapper">
+		<div id="logo">
+			<%= link_to "Real Good Beer", root_path %>
+		</div>
+		<nav>
+			<ul>
+				<li><%= link_to "Breweries", breweries_path %></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<div id="content">
+	<div class="wrapper">
+		<% flash.each do |key, value| %>
+			<div class="<%= key %>">
+				<p><%= value %></p>
+			</div>
+		<% end %>
+		</div>
 	<%= yield %>
 </div>
 

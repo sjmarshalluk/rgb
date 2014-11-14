@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141108123103) do
+ActiveRecord::Schema.define(version: 20141113124930) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -67,7 +67,6 @@ ActiveRecord::Schema.define(version: 20141108123103) do
     t.text     "drink_at_brewery_description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "address"
     t.float    "latitude"
     t.float    "longitude"
     t.string   "core_beer_one"
@@ -87,6 +86,11 @@ ActiveRecord::Schema.define(version: 20141108123103) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "address_one"
+    t.string   "address_two"
+    t.string   "city"
+    t.string   "county"
+    t.string   "post_code"
   end
 
 end

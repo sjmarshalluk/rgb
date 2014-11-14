@@ -9,12 +9,35 @@
 
 
 body {
-	font-family: "Arial", arial, sans-serif;
-	color: #333333;
+	font-family: "Brandon Grotesque", sans-serif;
+	color: #40382b;
+	-webkit-font-smoothing: antialiased;
+	font-weight: 500;
 }
 
 header {
-	margin: 50px 0
+	padding: 20px 0;
+	background-color: #40382b;
+	color: #fff;
+	overflow: hidden;
+}
+
+header nav {
+	float: left;
+}
+
+header nav li {
+	margin-left: 30px;
+}
+
+header a {
+	color: #fff;
+}
+
+header #logo {
+	text-transform: uppercase;
+	float: left;
+	font-weight: 900;
 }
 
 h1 {
@@ -27,13 +50,33 @@ h2 {
 	margin: 1em 0 2em;
 }
 
+h3 {
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
 a {
+	text-decoration: none;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	-ms-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+}
+
+a.button {
+	background-color: #bbb;
+	padding: 20px;
+	font-size: 12px;
+	text-transform: uppercase;
+	border-radius: 3px;
 }
 
 
 
 .wrapper {
-	width: 800px;
+	max-width: 1300px;
+	padding: 0 60px;
 	margin: 0 auto;
 }
 
@@ -116,8 +159,8 @@ a {
 .c12 {
 	position: relative;
 	float: left;
-	padding-left: 15px;
-	padding-right:15px; 
+	padding-left: 5px;
+	padding-right: 5px; 
 	min-height:1px;
 }
 
@@ -182,11 +225,8 @@ form {
 	width: 100%;
 }
 
-form section {
-	padding: 30px 20px 10px;
-	background-color: #fcfcfc;
-	margin-bottom: 20px;
-	overflow: hidden;
+form section div {
+	padding: 0 20px;
 }
 
 form h2 {
@@ -206,7 +246,6 @@ form p {
 label {
 	padding: 17px 0 10px;
 	display: inline-block;
-	text-transform: uppercase;
 	font-weight: 500;
 	font-size: 14px;
 }

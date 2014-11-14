@@ -1,7 +1,6 @@
 class Brewery < ActiveRecord::Base
 
 	validates :name, presence: true, uniqueness: true
-	validates :address, presence: true
 	validates :website, presence: true, uniqueness: true
 
 
@@ -11,5 +10,8 @@ class Brewery < ActiveRecord::Base
   	geocoded_by :address
 	after_validation :geocode
 
+	def address
+	  [address_one, address_two, city, county, post_code].compact.join(', ')
+	end
 
 end

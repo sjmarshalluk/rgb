@@ -1,28 +1,71 @@
 
-<%= link_to "Submit a brewery", new_brewery_path %>
 
-<%= form_tag breweries_path, :method => :get do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search Near", :name => nil %>
-  </p>
-<% end %>
 
-<div class="order_by">
-	<%= sortable "name", "brewery name" %>
-	<%= sortable "year_opened", "Year" %>
+<div class="search_bar">
+	<div class="wrapper">
+		<p class="c7">Search for a brewery near a postcode</p>
+		<%= form_tag breweries_path, :method => :get do %>
+			<%= text_field_tag :search, params[:search], class: "c3" %>
+			<%= submit_tag "Search Near", :name => nil, class: "c2" %>
+		<% end %>
+	</div>
 </div>
 
-<ul id="breweries">
-<% @breweries.each do |brewery| %>
-	<li class="row">
-		<%= link_to brewery_path(brewery) do %>
-			<%= image_tag brewery.image.url(:thumb), class: "c2" %>
-			<div class="c10 brewery">
-				<h1><%= brewery.name %></h1>
-				<p><%= brewery.address %></p>
-			</div>
+
+
+
+
+
+<div id="brewery_list">
+	<div class="wrapper">
+
+	<div class="row">
+		<div class="search">
+			<input class="search" placeholder="Search" />
+			<!-- 
+			<button class="sort" data-sort="name">
+				Sort by name
+			</button>
+			 -->
+		</div>
+	</div>
+
+		<ul class="list">
+		<% @breweries.each do |brewery| %>
+			<li class="brewery">
+				<div class="row">
+					<div class="c1">
+						<%= image_tag brewery.image.url(:thumb) %>
+					</div>
+					<div class="details c8">
+						<span class="name"><%= link_to "#{brewery.name}", brewery.website, :target => '_blank' %></span>  
+						<span class="location">(<%= brewery.city %>)</span>
+					</div>
+					<ul class="links c3">
+						<li><%= link_to "Twitter", "#{brewery.twitter}", :target => '_blank', class: "twitter"  %></li>
+						<li><%= link_to "Facebook", "#{brewery.facebook}", :target => '_blank', class: "facebook"  %></li>
+						<li><%= link_to "Instagram", "#{brewery.instagram}", :target => '_blank', class: "instagram"  %></li>
+						<li><%= link_to "Untappd", "#{brewery.untappd}", :target => '_blank', class: "untappd"  %></li>
+						<li><%= link_to "Map", "http://maps.google.com/maps?q=#{brewery.latitude},#{brewery.longitude}", :target => '_blank', class: "map"  %></li>
+					</ul>
+				</div>
+
+			</li>
 		<% end %>
-	</li>
-<% end %>
-</ul>
+		</ul>
+		<%= link_to "Submit a brewery", new_brewery_path, class: "submit_brewery button" %>
+
+	</div>
+</div>
+
+
+
+
+<script type="text/javascript">
+
+var options = {
+  valueNames: [ 'name', 'location' ]
+};
+
+var userList = new List('brewery_list', options);
+</script>

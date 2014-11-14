@@ -1,12 +1,11 @@
 class BreweriesController < ApplicationController
 
-  helper_method :sort_column, :sort_direction
 
   def index
     if params[:search].present?
       @breweries = Brewery.near(params[:search], 10)
     else
-      @breweries = Brewery.order(sort_column + " " + sort_direction)
+      @breweries = Brewery.all
     end
   end
 
@@ -54,14 +53,6 @@ class BreweriesController < ApplicationController
 
   private
 
-  def sort_column
-    Brewery.column_names.include?(params[:sort]) ? params[:sort] : "name"
-  end
-
-  def sort_direction
-    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-  end
-
 
   def brewery_params
   	params.require(:brewery).permit(
@@ -92,7 +83,11 @@ class BreweriesController < ApplicationController
   		:ratebeer,
   		:drink_at_brewery,
   		:drink_at_brewery_description,
-  		:address,
+  		:address_one,
+      :address_two,
+      :city,
+      :county,
+      :post_code,
   		:latitude,
   		:longitude,
       :approved,
