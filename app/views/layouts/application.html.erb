@@ -13,11 +13,13 @@
 <header>
 	<div class="wrapper">
 		<div id="logo">
-			<%= link_to "Real Good Beer", root_path %>
+			<%= link_to "Real Good Beer", breweries_path %>
 		</div>
 		<nav>
 			<ul>
-				<li><%= link_to "Breweries", breweries_path %></li>
+				<li><%= link_to_active_class "Breweries", "selected", breweries_path %></li>
+				<li><%= link_to_active_class "Bottle Shops", "selected", '/bottle-shops' %></li>
+				<li><%= link_to_active_class "Beer Clubs", "selected", '/beer-clubs' %></li>
 			</ul>
 		</nav>
 	</div>

@@ -21,7 +21,7 @@
 
 	<div class="row">
 		<div class="search">
-			<input class="search" placeholder="Search" />
+			<input class="search" placeholder="Search (name / location)" />
 			<!-- 
 			<button class="sort" data-sort="name">
 				Sort by name
@@ -37,9 +37,12 @@
 					<div class="c1">
 						<%= image_tag brewery.image.url(:thumb) %>
 					</div>
-					<div class="details c8">
-						<span class="name"><%= link_to "#{brewery.name}", brewery.website, :target => '_blank' %></span>  
-						<span class="location">(<%= brewery.city %>)</span>
+					<div class="c8">
+						<div class="details">
+							<span class="name"><%= link_to "#{brewery.name}", brewery.website, :target => '_blank' %></span>  
+							<span class="location"><%= link_to "#{brewery.city}", "http://maps.google.com/maps?q=#{brewery.latitude},#{brewery.longitude}", :target => '_blank' %></span>, 
+							<span class="brewery_type"><%= brewery.brewery_type %></span>
+						</div>
 					</div>
 					<ul class="links c3">
 						<li><%= link_to "Twitter", "#{brewery.twitter}", :target => '_blank', class: "twitter"  %></li>

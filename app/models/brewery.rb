@@ -1,6 +1,10 @@
 class Brewery < ActiveRecord::Base
 
 	validates :name, presence: true, uniqueness: true
+	validates :address_one, presence: true
+	validates :city, presence: true
+	validates :county, presence: true
+	validates :postcode, presence: true
 	validates :website, presence: true, uniqueness: true
 
 
