@@ -6,7 +6,17 @@
 
 	<div class="row">
 		<%= simple_form_for @brewery do |f| %>
-
+			<section class="c6">
+				<%= f.input :name, label: "Brewery Name" %>
+				<%= f.input :address_one, label: "Address line one" %>
+				<%= f.input :address_two, label: "Address line two" %>
+				<%= f.input :city, label: "City" %>
+				<%= f.input :county, label: "County" %>
+				<%= f.input :post_code, label: "Post Code" %>
+				<%= f.input :website %>
+				<%= f.input :image %>
+				<%= f.input :brewery_type, :label => "Brewery type", :collection => ["micro","brewpub"] %>
+			</section>
 			<%= f.submit %>
 		<% end %>
 	</div>
