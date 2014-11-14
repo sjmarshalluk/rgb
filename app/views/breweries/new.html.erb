@@ -6,26 +6,7 @@
 
 	<div class="row">
 		<%= simple_form_for @brewery do |f| %>
-			<section class="c6">
-				<%= f.input :name, label: "Brewery Name" %>
-				<%= f.input :address_one, label: "Address line one" %>
-				<%= f.input :address_two, label: "Address line two" %>
-				<%= f.input :city, label: "City" %>
-				<%= f.input :county, label: "County" %>
-				<%= f.input :post_code, label: "Post Code" %>
-				<%= f.input :website %>
-				<%= f.input :image %>
-				<%= f.input :brewery_type, :label => "Brewery type", :collection => ["micro","brewpub"] %>
-			</section>
-			<section class="c6">
-				<%= f.input :twitter %>
-				<%= f.input :facebook %>
-				<%= f.input :instagram %>
-				<%= f.input :untappd %>
-				<%= f.input :ratebeer %>
-				<%= f.input :drink_at_brewery, label: "Can you drink at the brewery?", wrapper_html: { class: 'boolean' } %>
-				<%= f.input :tours, label: "Does this brewery offer tours?", wrapper_html: { class: 'boolean' } %>
-			</section>
+
 			<%= f.submit %>
 		<% end %>
 	</div>

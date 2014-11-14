@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141113124930) do
+ActiveRecord::Schema.define(version: 20141114102528) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -49,14 +49,6 @@ ActiveRecord::Schema.define(version: 20141113124930) do
   create_table "breweries", force: true do |t|
     t.string   "name"
     t.string   "brewery_type"
-    t.text     "description"
-    t.string   "year_opened"
-    t.string   "head_brewer"
-    t.string   "founder"
-    t.boolean  "seasonals"
-    t.boolean  "changing"
-    t.integer  "rating"
-    t.string   "where_to_buy"
     t.string   "website"
     t.string   "twitter"
     t.string   "facebook"
@@ -64,23 +56,11 @@ ActiveRecord::Schema.define(version: 20141113124930) do
     t.string   "untappd"
     t.string   "ratebeer"
     t.boolean  "drink_at_brewery"
-    t.text     "drink_at_brewery_description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "core_beer_one"
-    t.string   "core_beer_two"
-    t.string   "core_beer_three"
-    t.string   "core_beer_four"
-    t.string   "core_beer_five"
-    t.string   "core_beer_six"
-    t.string   "core_beer_seven"
-    t.string   "core_beer_eight"
-    t.string   "core_beer_nine"
-    t.string   "core_beer_ten"
     t.boolean  "approved"
-    t.string   "telephone"
     t.boolean  "tours"
     t.string   "image_file_name"
     t.string   "image_content_type"
