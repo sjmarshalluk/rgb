@@ -1,0 +1,22 @@
+<div class="wrapper">
+
+	<div class="row">
+		<div class="c12">
+			<h1>Add a shop</h1>
+			<p>Use this form to suggest a shop for us to list. </p>
+		</div>
+	</div>
+
+	<div class="row">
+		<%= simple_form_for @shop do |f| %>
+			<div class="c6">
+				<section>
+					<%= f.input :name, label: "Shop Name" %>
+					<%= f.input :website %>
+				</section>
+				<%= f.submit %>
+			</div>
+		<% end %>
+	</div>
+
+</div>

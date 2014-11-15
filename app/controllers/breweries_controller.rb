@@ -5,7 +5,7 @@ class BreweriesController < ApplicationController
     if params[:search].present?
       @breweries = Brewery.near(params[:search], 10)
     else
-      @breweries = Brewery.all
+      @breweries = Brewery.order('name ASC').published
     end
   end
 
@@ -20,8 +20,8 @@ class BreweriesController < ApplicationController
   def create
   	@brewery = Brewery.new(brewery_params)
   	if @brewery.save
-  		flash[:success] = "Brewery saved"
-  		redirect_to root_path
+  		flash[:success] = "Thanks for submitting your brewery. We'll check it over and get it added asap."
+  		redirect_to breweries_path
   	else
   		flash[:error] = "That didnt work"
   		render :new

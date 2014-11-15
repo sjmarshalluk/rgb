@@ -3,12 +3,11 @@ class Brewery < ActiveRecord::Base
 	validates :name, presence: true, uniqueness: true
 	validates :address_one, presence: true
 	validates :city, presence: true
-	validates :county, presence: true
-	validates :postcode, presence: true
+	validates :post_code, presence: true
 	validates :website, presence: true, uniqueness: true
 
 
-	has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+	has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/missing.png"
   	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
   	geocoded_by :address
@@ -17,5 +16,7 @@ class Brewery < ActiveRecord::Base
 	def address
 	  [address_one, address_two, city, county, post_code].compact.join(', ')
 	end
+
+	scope :published, -> { where(approved: true) }
 
 end

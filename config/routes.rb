@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
 
   resources :breweries, only: [:index, :new, :create, :show, :update, :destroy]
+  resources :shops, only: [:new, :create]
 
   root "pages#index"
 

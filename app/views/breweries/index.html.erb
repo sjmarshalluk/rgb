@@ -20,8 +20,8 @@
 	<div class="wrapper">
 
 	<div class="row">
-		<div class="search">
-			<input class="search" placeholder="Search (name / location)" />
+		<div class="search c12">
+			<input class="search" placeholder="Search (e.g. 'Beavertown' or 'London')" />
 			<!-- 
 			<button class="sort" data-sort="name">
 				Sort by name
@@ -34,29 +34,50 @@
 		<% @breweries.each do |brewery| %>
 			<li class="brewery">
 				<div class="row">
-					<div class="c1">
+					<div class="c12">
 						<%= image_tag brewery.image.url(:thumb) %>
-					</div>
-					<div class="c8">
-						<div class="details">
-							<span class="name"><%= link_to "#{brewery.name}", brewery.website, :target => '_blank' %></span>  
-							<span class="location"><%= link_to "#{brewery.city}", "http://maps.google.com/maps?q=#{brewery.latitude},#{brewery.longitude}", :target => '_blank' %></span>, 
-							<span class="brewery_type"><%= brewery.brewery_type %></span>
+						<div class="data">
+							<div class="details">
+								<span class="name"><%= link_to "#{brewery.name}", brewery.website, :target => '_blank' %></span>  
+
+								<%= link_to "http://maps.google.com/maps?q=#{brewery.latitude},#{brewery.longitude}", :target => '_blank' do %>
+									<span class="location">
+										<% if brewery.city.present? %><%= brewery.city %><% end %><% if brewery.city.present? and brewery.county.present? %>, <% end %><% if brewery.county.present? %><%= brewery.county %><% end %>
+									</span>
+								<% end %>
+								<% if brewery.brewery_type.present? %>
+									<span class="brewery_type">(<%= brewery.brewery_type %>)</span>
+								<% end %>
+							</div>
+							<ul class="links">
+								<% if brewery.twitter.present? %>
+									<li><%= link_to "Twitter", "#{brewery.twitter}", :target => '_blank', class: "twitter"  %></li>
+								<% end %>
+								<% if brewery.facebook.present? %>
+									<li><%= link_to "Facebook", "#{brewery.facebook}", :target => '_blank', class: "facebook"  %></li>
+								<% end %>
+								<% if brewery.instagram.present? %>
+									<li><%= link_to "Instagram", "#{brewery.instagram}", :target => '_blank', class: "instagram"  %></li>
+								<% end %>
+								<% if brewery.untappd.present? %>
+									<li><%= link_to "Untappd", "#{brewery.untappd}", :target => '_blank', class: "untappd"  %></li>
+								<% end %>
+								<% if brewery.ratebeer.present? %>
+									<li><%= link_to "Ratebeer", "#{brewery.ratebeer}", :target => '_blank', class: "ratebeer"  %></li>
+								<% end %>
+								<li><%= link_to "Map", "http://maps.google.com/maps?q=#{brewery.latitude},#{brewery.longitude}", :target => '_blank', class: "map"  %></li>
+							</ul>
 						</div>
 					</div>
-					<ul class="links c3">
-						<li><%= link_to "Twitter", "#{brewery.twitter}", :target => '_blank', class: "twitter"  %></li>
-						<li><%= link_to "Facebook", "#{brewery.facebook}", :target => '_blank', class: "facebook"  %></li>
-						<li><%= link_to "Instagram", "#{brewery.instagram}", :target => '_blank', class: "instagram"  %></li>
-						<li><%= link_to "Untappd", "#{brewery.untappd}", :target => '_blank', class: "untappd"  %></li>
-						<li><%= link_to "Map", "http://maps.google.com/maps?q=#{brewery.latitude},#{brewery.longitude}", :target => '_blank', class: "map"  %></li>
-					</ul>
 				</div>
 
 			</li>
 		<% end %>
 		</ul>
-		<%= link_to "Submit a brewery", new_brewery_path, class: "submit_brewery button" %>
+		<div class="submit_brewery">
+			<p>Can't find what you're looking for? Suggest a brewery for us to list.</p>
+			<%= link_to "Submit a brewery", new_brewery_path, class: "button" %>
+		</div>
 
 	</div>
 </div>

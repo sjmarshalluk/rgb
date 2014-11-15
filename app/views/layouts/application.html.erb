@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Real Good Beer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,28 +11,62 @@
 </head>
 <body>
 
-<header>
-	<div class="wrapper">
-		<div id="logo">
-			<%= link_to "Real Good Beer", breweries_path %>
+
+<% if current_page?(root_path) %>
+
+	<div id="home_nav">
+		<div class="wrapper">
+			<div class="menu_item">
+				<%= link_to breweries_path, :class => 'real' do %>
+			    	<span>Real</span>
+				<% end %>
+			</div>
+			<div class="menu_item">
+				<%= link_to '/bottle-shops', :class => 'good' do %>
+			    	<span>Good</span>
+				<% end %>
+			</div>
+			<div class="menu_item">
+				<%= link_to '/beer-clubs', :class => 'beer' do %>
+			    	<span>Beer</span>
+				<% end %>
+			</div>
 		</div>
-		<nav>
-			<ul>
-				<li><%= link_to_active_class "Breweries", "selected", breweries_path %></li>
-				<li><%= link_to_active_class "Bottle Shops", "selected", '/bottle-shops' %></li>
-				<li><%= link_to_active_class "Beer Clubs", "selected", '/beer-clubs' %></li>
-			</ul>
-		</nav>
 	</div>
-</header>
+
+<% else %>
+	<header>
+		<div class="wrapper">
+			<div class="row">
+				<div class="c12">
+					<div id="logo">
+						<%= link_to "Real Good Beer", root_path %>
+					</div>
+					<nav class="nav-collapse">
+						<ul>
+							<li><%= link_to_active_class "Breweries", "selected", breweries_path %></li>
+							<li><%= link_to_active_class "Bottle Shops", "selected", '/bottle-shops' %></li>
+							<li><%= link_to_active_class "Beer Clubs", "selected", '/beer-clubs' %></li>
+						</ul>
+					</nav>
+					<script>
+				      var navigation = responsiveNav(".nav-collapse");
+				    </script>
+				</div>
+			</div>
+		</div>
+	</header>
+<% end %>
 
 <div id="content">
 	<div class="wrapper">
-		<% flash.each do |key, value| %>
-			<div class="<%= key %>">
-				<p><%= value %></p>
-			</div>
-		<% end %>
+		<div class="row">
+			<% flash.each do |key, value| %>
+				<div class="<%= key %> c12">
+					<p><%= value %></p>
+				</div>
+			<% end %>
+		</div>
 		</div>
 	<%= yield %>
 </div>

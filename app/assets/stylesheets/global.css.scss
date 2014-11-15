@@ -7,12 +7,16 @@
 	padding: 0;
 }
 
+html {
+	height: 100%;
+}
 
 body {
 	font-family: "Brandon Grotesque", sans-serif;
 	color: #40382b;
 	-webkit-font-smoothing: antialiased;
 	font-weight: 500;
+	height: 100%;
 }
 
 header {
@@ -36,6 +40,7 @@ header a {
 	color: #fff;
 }
 
+header a:hover,
 header a.selected {
 	color: $main
 }
@@ -44,6 +49,10 @@ header #logo {
 	text-transform: uppercase;
 	float: left;
 	font-weight: 900;
+}
+
+header .row {
+	margin-bottom: 0;
 }
 
 h1 {
@@ -95,6 +104,15 @@ a.button:hover {
 }
 
 
+
+
+.success {
+	background-color: $main;
+	color: #fff;
+	padding: 20px;
+	margin-bottom: 30px;
+	text-align: center;
+}
 
 
 .row{
@@ -233,6 +251,60 @@ a.button:hover {
 
 
 
+#home_nav {
+	font-size: 200px;
+	text-align: center;
+	background-color: $dark;
+	text-transform: uppercase;
+	font-weight: 900;
+	letter-spacing: -6px;
+	height: 100%;
+	line-height: 130px;
+}
+
+#home_nav .wrapper {
+	max-width: 100%;
+	padding: 80px 0 0 0;
+}
+
+#home_nav div.menu_item {
+	display: block;
+	overflow: hidden;
+	height: 170px;
+}
+
+#home_nav a {
+	color: #fff;
+	display: block;
+	padding: 0px;
+	height: auto;
+	padding: 20px 0;
+}
+
+#home_nav a:hover span {
+	display: none;
+}
+
+#home_nav a:hover {
+	color: $main;
+}
+
+#home_nav a.real:hover:before {
+	content:"Breweries"
+}
+
+#home_nav a.good:hover:before {
+	content:"Shops"
+}
+
+#home_nav a.beer:hover:before {
+	content:"Beer Clubs"
+}
+
+
+
+
+
 
 
 form {
@@ -296,4 +368,87 @@ textarea:focus {
 	outline: none;
     background-color: lighten($main, 40% );
     border: 1px solid $main;
+}
+
+
+
+@media screen and (min-width: 900px) {
+  .js .nav-collapse {
+    position: relative;
+  }
+  .js .nav-collapse.closed {
+    max-height: none;
+  }
+  .nav-toggle {
+    display: none;
+  }
+}
+
+
+@media only screen and (max-width: 900px) {
+
+	.wrapper {
+		padding: 0 10px;
+	}
+
+	nav {
+		width: 100%;
+	}
+
+	nav ul {
+  margin: 0;
+  padding: 20px 0;
+  width: 100%;
+  display: block;
+  list-style: none;
+  overflow: hidden;
+}
+
+nav ul li {
+  width: 100%;
+  display: block;
+  margin-left: 0;
+  text-align: center;
+}
+
+nav ul li a {
+  width: 100%;
+  display: block;
+  padding:30px;
+}
+
+
+
+	.js .nav-collapse {
+  clip: rect(0 0 0 0);
+  max-height: 0;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  zoom: 1;
+}
+
+.nav-collapse.opened {
+  max-height: 9999px;
+}
+
+.disable-pointer-events {
+  pointer-events: none !important;
+}
+
+.nav-toggle {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  float: right;
+  color: #fff;
+}
+
+
+
+
 }
