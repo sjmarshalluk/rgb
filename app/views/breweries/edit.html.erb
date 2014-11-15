@@ -1,27 +1,46 @@
 
-<%= simple_form_for @brewery do |f| %>
-	<%= f.input :name %>
-	<%= f.input :address %>
-	<%= f.input :brewery_type %>
-	<%= f.input :description %>
-	<%= f.input :year_opened %>
-	<%= f.input :head_brewer %>
-	<%= f.input :founder %>
-	<%= f.input :core_range %>
-	<%= f.input :seasonals %>
-	<%= f.input :changing %>
-	<%= f.input :where_to_buy %>
-	<%= f.input :website %>
-	<%= f.input :twitter %>
-	<%= f.input :facebook %>
-	<%= f.input :instagram %>
-	<%= f.input :untappd %>
-	<%= f.input :ratebeer %>
-	<%= f.input :drink_at_brewery %>
-	<%= f.input :drink_at_brewery_description %>
+<div class="wrapper">
 
-	<%= f.submit %>
-<% end %>
+	<div class="row">
+		<div class="c12">
+			<h1>Add a brewery</h1>
+			<p>Use this form to suggest a brewery for us to list. </p>
+		</div>
+	</div>
 
+	<div class="row">
+		<%= simple_form_for @brewery do |f| %>
+			<div class="c6">
+				<section>
+					<%= f.input :name, label: "Brewery Name" %>
+					<%= f.input :website %>
+					<%= f.input :user_email, label: "Your email" %>
+				</section>
+				<p>Thats all we really need, but if you have any of the following, that would really help us out...</p>
+				<section>
+					<%= f.input :image, label: "Logo" %>
+					<%= f.input :brewery_type, :label => "Brewery type", :collection => ["Microbrewery", "Brewpub", "Commercial"] %>
+					<%= f.input :address_one, label: "Address line one" %>
+					<%= f.input :address_two, label: "Address line two" %>
+					<%= f.input :city, label: "City" %>
+					<%= f.input :county, label: "County" %>
+					<%= f.input :post_code, label: "Post Code" %>
+				</section>
+				<section>
+					<%= f.input :twitter %>
+					<%= f.input :facebook %>
+					<%= f.input :instagram %>
+					<%= f.input :untappd %>
+					<%= f.input :ratebeer %>
+				</section>
+				<section>
+					<%= f.input :drink_at_brewery, label: "Can you drink at the brewery?", wrapper_html: { class: 'boolean' } %>
+					<%= f.input :tours, label: "Does this brewery offer tours?", wrapper_html: { class: 'boolean' } %>
+				</section>
+				<%= f.submit %>
+			</div>
+		<% end %>
+	</div>
 
+</div>
 
