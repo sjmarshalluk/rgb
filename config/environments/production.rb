@@ -29,6 +29,10 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
 
+
+  # Precompile additional assets. Defaults to [application.js, application.css, non-JS/CSS]
+config.assets.precompile += ['active_admin.css', 'active_admin/print.css', 'active_admin.js']
+
   # Generate digests for assets URLs.
   config.assets.digest = true
 
