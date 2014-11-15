@@ -7,7 +7,9 @@ ActiveAdmin.register Club do
       :name, 
       :website,
       :image,
-      :description
+      :description,
+      :user_email,
+      :approved
     ]
     end
   end

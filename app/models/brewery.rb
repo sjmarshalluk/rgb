@@ -1,10 +1,8 @@
 class Brewery < ActiveRecord::Base
 
 	validates :name, presence: true, uniqueness: true
-	validates :address_one, presence: true
-	validates :city, presence: true
-	validates :post_code, presence: true
 	validates :website, presence: true, uniqueness: true
+	validates :user_email, presence: true
 
 
 	has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/missing.png"

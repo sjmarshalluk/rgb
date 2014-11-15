@@ -6,7 +6,9 @@ ActiveAdmin.register Shop do
     def permitted_params
       params.permit shop: [
       :name, 
-      :website
+      :website,
+      :user_email,
+      :approved
     ]
     end
   end

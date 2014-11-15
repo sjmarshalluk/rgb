@@ -74,7 +74,8 @@ class BreweriesController < ApplicationController
   		:longitude,
       :approved,
       :tours,
-      :image
+      :image,
+      :user_email
   	)
   end
 

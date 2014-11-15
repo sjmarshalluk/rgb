@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141115100921) do
+ActiveRecord::Schema.define(version: 20141115113748) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 20141115100921) do
     t.string   "city"
     t.string   "county"
     t.string   "post_code"
+    t.string   "user_email"
   end
 
   create_table "clubs", force: true do |t|
@@ -83,6 +84,8 @@ ActiveRecord::Schema.define(version: 20141115100921) do
     t.datetime "image_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "user_email"
+    t.boolean  "approved"
   end
 
   create_table "shops", force: true do |t|
@@ -90,6 +93,8 @@ ActiveRecord::Schema.define(version: 20141115100921) do
     t.string   "website"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "user_email"
+    t.boolean  "approved"
   end
 
 end

@@ -2,7 +2,7 @@ class ClubsController < ApplicationController
 
 
 	def index
-		@clubs = Club.all
+		@clubs = Club.order('name ASC').published
 	end
 
   def new
@@ -41,7 +41,9 @@ class ClubsController < ApplicationController
       :name,
       :website,
       :description,
-      :image
+      :image,
+      :user_email,
+      :approved
     )
   end
 

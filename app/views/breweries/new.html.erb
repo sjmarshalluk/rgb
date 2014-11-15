@@ -13,10 +13,13 @@
 			<div class="c6">
 				<section>
 					<%= f.input :name, label: "Brewery Name" %>
+					<%= f.input :website %>
+					<%= f.input :user_email, label: "Your email" %>
+				</section>
+				<p>Thats all we really need, but if you have any of the following, that would really help us out...</p>
+				<section>
 					<%= f.input :image, label: "Logo" %>
 					<%= f.input :brewery_type, :label => "Brewery type", :collection => ["Microbrewery", "Brewpub", "Commercial"] %>
-				</section>
-				<section>
 					<%= f.input :address_one, label: "Address line one" %>
 					<%= f.input :address_two, label: "Address line two" %>
 					<%= f.input :city, label: "City" %>
@@ -24,7 +27,6 @@
 					<%= f.input :post_code, label: "Post Code" %>
 				</section>
 				<section>
-					<%= f.input :website %>
 					<%= f.input :twitter %>
 					<%= f.input :facebook %>
 					<%= f.input :instagram %>

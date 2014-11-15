@@ -22,7 +22,8 @@ ActiveAdmin.register Brewery do
       :longitude,
       :approved,
       :tours,
-      :image
+      :image,
+      :user_email
     ]
     end
   end
