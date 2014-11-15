@@ -51,6 +51,19 @@ header #logo {
 	font-weight: 900;
 }
 
+header #twitter {
+	float: right;
+	margin-left: 20px;
+}
+
+header #twitter a {
+	background-image: url('../assets/twitter.png');
+	width: 26px;
+	height: 20px;
+	display: block;
+	text-indent: -9999px;
+}
+
 header .row {
 	margin-bottom: 0;
 }
@@ -68,6 +81,11 @@ h2 {
 h3 {
 	font-size: 14px;
 	text-transform: uppercase;
+}
+
+p {
+	font-size: 18px;
+	line-height: 1.4;
 }
 
 a {
@@ -483,4 +501,10 @@ nav ul li a {
 
 
 
+
 }
+
+
+
+
+
