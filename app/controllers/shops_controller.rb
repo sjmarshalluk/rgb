@@ -16,6 +16,17 @@ class ShopsController < ApplicationController
     end
   end
 
+  def update
+    @shop = Shop.find(params[:id])
+    if @shop.update(shop_params)
+      flash[:success] = "Changes saved"
+      redirect_to root_path
+    else
+      flash[:error] = "Nope"
+      render :new
+    end
+  end
+
   private
 
 

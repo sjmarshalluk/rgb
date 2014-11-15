@@ -1,0 +1,18 @@
+
+
+<div class="wrapper">
+
+
+	<div id="club_list">
+		<ul class="list">
+			<% @clubs.each do |club| %>
+				<li class="club c4">
+					<%= image_tag club.image.url %>
+					<span class="name"><%= link_to "#{club.name}", club.website, :target => '_blank' %></span>
+					<span class="description"><%= club.description %></span>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+
+</div>
