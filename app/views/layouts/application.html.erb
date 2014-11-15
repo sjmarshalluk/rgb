@@ -7,7 +7,6 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-
 </head>
 <body>
 
@@ -17,17 +16,17 @@
 	<div id="home_nav">
 		<div class="wrapper">
 			<div class="menu_item">
-				<%= link_to breweries_path, :class => 'real' do %>
+				<%= link_to breweries_path, :id => 'real' do %>
 			    	<span>Real</span>
 				<% end %>
 			</div>
 			<div class="menu_item">
-				<%= link_to '/bottle-shops', :class => 'good' do %>
+				<%= link_to '/bottle-shops', :id => 'good' do %>
 			    	<span>Good</span>
 				<% end %>
 			</div>
 			<div class="menu_item">
-				<%= link_to '/beer-clubs', :class => 'beer' do %>
+				<%= link_to '/beer-clubs', :id => 'beer' do %>
 			    	<span>Beer</span>
 				<% end %>
 			</div>

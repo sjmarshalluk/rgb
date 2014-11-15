@@ -271,6 +271,7 @@ a.button:hover {
 	display: block;
 	overflow: hidden;
 	height: 170px;
+	width: 100%;
 }
 
 #home_nav a {
@@ -281,6 +282,7 @@ a.button:hover {
 	padding: 20px 0;
 }
 
+
 #home_nav a:hover span {
 	display: none;
 }
@@ -289,19 +291,49 @@ a.button:hover {
 	color: $main;
 }
 
-#home_nav a.real:hover:before {
+#home_nav a#real:hover:before {
 	content:"Breweries"
 }
 
-#home_nav a.good:hover:before {
+#home_nav a#good:hover:before {
 	content:"Shops"
 }
 
-#home_nav a.beer:hover:before {
+#home_nav a#beer:hover:before {
 	content:"Beer Clubs"
 }
 
 
+
+/* Kerning */
+	
+#home_nav #real .char10 {
+	margin-right: -8px;
+}
+
+#home_nav #real .char11 {
+	margin-right: 8px;
+}
+
+#home_nav #good .char11 {
+	margin-right: 3px;
+}
+
+#home_nav #good .char12 {
+	margin-right: -3px;
+}
+
+#home_nav #beer .char10 {
+	margin-right: -3px;
+}
+
+#home_nav #beer .char11 {
+	margin-right: -3px;
+}
+
+#home_nav #beer .char12 {
+	margin-right: -3px;
+}
 
 
 
