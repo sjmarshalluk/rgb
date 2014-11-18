@@ -298,6 +298,9 @@ a.button:hover {
 	padding: 0px;
 	height: auto;
 	padding: 20px 0;
+	-moz-box-shadow:    8px 8px #100f0e;
+  	-webkit-box-shadow: 8px 8px #100f0e;
+  	text-shadow:        8px 8px #100f0e;
 }
 
 
@@ -318,7 +321,7 @@ a.button:hover {
 }
 
 #home_nav a#beer:hover:before {
-	content:"Beer Clubs"
+	content:"Clubs"
 }
 
 
@@ -422,6 +425,17 @@ textarea:focus {
 
 
 
+
+@media only screen and (max-width: 1050px) {
+
+
+#home_nav a#real:hover {
+	font-size: 150px;
+}
+
+}
+
+
 @media screen and (min-width: 900px) {
   .js .nav-collapse {
     position: relative;
@@ -502,9 +516,78 @@ nav ul li a {
 
 
 
+#home_nav {
+	font-size: 100px;
+}
+
+#home_nav:before {
+	content: "Real Good Beer";
+	font-size: 16px;
+	letter-spacing: 0;
+	color: #fff;
+}
+
+#home_nav .wrapper {
+	padding: 0px 0 0 0;
 }
 
 
 
+#home_nav div.menu_item {
+	display: block;
+	overflow: hidden;
+	height: 130px;
+	width: 100%;
+}
+
+#home_nav a {
+	color: #fff;
+	display: block;
+	padding: 0px;
+	height: auto;
+	padding: 20px 0;
+}
+
+#home_nav a span {
+	display: none;
+}
+
+#home_nav a:hover {
+	color: $main;
+}
+
+
+
+#home_nav a#real:hover {
+	font-size: 100px;
+}
+
+#home_nav a#real:before {
+	content:"Breweries"
+}
+
+#home_nav a#good:before {
+	content:"Shops"
+}
+
+#home_nav a#beer:before {
+	content:"Clubs"
+}
+
+
+
+}
+
+
+
+@media only screen and (max-width: 530px) {
+
+#home_nav,
+#home_nav a#real:hover {
+	font-size: 80px;
+}
+
+
+}
 
 

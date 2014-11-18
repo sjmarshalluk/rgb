@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 	get '/bottle-shops' => 'pages#shops'
   get '/beer-clubs' => 'pages#clubs'
 
+  get '/breweries/all' => 'breweries#all'
+  get '/breweries/near' => 'breweries#near'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 

@@ -1,12 +1,16 @@
 class BreweriesController < ApplicationController
 
 
-  def index
+  def all
     if params[:search].present?
       @breweries = Brewery.near(params[:search], 10)
     else
       @breweries = Brewery.order('name ASC').published
     end
+  end
+
+  def near
+      @breweries = Brewery.near(params[:search], 10)
   end
 
   def show

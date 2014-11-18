@@ -71,14 +71,14 @@
 
 <div id="content">
 	<div class="wrapper">
-		<div class="row">
-			<% flash.each do |key, value| %>
+		<% flash.each do |key, value| %>
+			<div class="row">
 				<div class="<%= key %> c12">
 					<p><%= value %></p>
 				</div>
-			<% end %>
-		</div>
-		</div>
+			</div>
+		<% end %>
+	</div>
 	<%= yield %>
 </div>
 
