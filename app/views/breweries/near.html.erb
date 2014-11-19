@@ -23,14 +23,13 @@
 							<div class="details">
 								<span class="name">
 									<%= link_to "#{brewery.name}", brewery.website, :target => '_blank' %> 
-									<span>
-										<%= link_to "is #{brewery.distance.round(2)} miles away", "http://maps.google.com/maps?q=#{brewery.latitude},#{brewery.longitude}", :target => '_blank' %>
-									</span>
+									
 								</span>  
 
 
 								<%= link_to "http://maps.google.com/maps?q=#{brewery.latitude},#{brewery.longitude}", :target => '_blank' do %>
 									<span class="location">
+										<span><%= brewery.distance.round(2) %> miles away in</span>
 										<% if brewery.city.present? %><%= brewery.city %><% end %><% if brewery.city.present? and brewery.county.present? %>, <% end %><% if brewery.county.present? %><%= brewery.county %><% end %>
 									</span>
 								<% end %>
