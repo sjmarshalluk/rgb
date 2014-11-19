@@ -1,7 +1,4 @@
 
-<h1>Breweries</h1>
-
-
 
 
 <div id="brewery_list">
@@ -24,7 +21,13 @@
 						<%= image_tag brewery.image.url(:thumb) %>
 						<div class="data">
 							<div class="details">
-								<span class="name"><%= link_to "#{brewery.name}", brewery.website, :target => '_blank' %> <%= brewery.distance.round(2) %></span>  
+								<span class="name">
+									<%= link_to "#{brewery.name}", brewery.website, :target => '_blank' %> 
+									<span>
+										<%= link_to "is #{brewery.distance.round(2)} miles away", "http://maps.google.com/maps?q=#{brewery.latitude},#{brewery.longitude}", :target => '_blank' %>
+									</span>
+								</span>  
+
 
 								<%= link_to "http://maps.google.com/maps?q=#{brewery.latitude},#{brewery.longitude}", :target => '_blank' do %>
 									<span class="location">

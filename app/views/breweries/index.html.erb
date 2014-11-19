@@ -2,10 +2,21 @@
 
 
 
+<div class="wrapper">
 
-<%= link_to "All breweries", '/breweries/all' %>
+	<div class="row landing">
+		<div class="c6">
+			<p class="all">Browse all breweries</p>
+			<%= link_to "All breweries", '/breweries/all', class: "button" %>
+		</div>
 
-<%= form_tag '/breweries/near', :method => :get do %>
-	<%= text_field_tag :search, params[:search], class: "c2" %>
-	<%= submit_tag "Search Near", :name => nil, class: "c2" %>
-<% end %>
+		<div class="c6">
+			<p>Search near</p>
+			<%= form_tag '/breweries/near', :method => :get do %>
+				<%= text_field_tag :search, params[:search], :placeholder => "POSTCODE", class: "postcode" %>
+				<%= submit_tag "Search Near", :name => nil, class: "button" %>
+			<% end %>
+		</div>
+	</div>
+
+</div>

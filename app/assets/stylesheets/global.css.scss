@@ -359,6 +359,71 @@ a.button:hover {
 
 
 
+.landing {
+	text-align: center;
+	padding: 100px 0;
+}
+
+.landing p {
+	font-size: 36px;
+	text-transform: uppercase;
+	font-weight: 900;
+	width: 300px;
+	margin: 0 auto;
+}
+
+.landing p.all {
+	margin-bottom: 60px;
+}
+
+.landing input.postcode {
+	border: none;
+	border-bottom: 1px solid #bbb;
+	font-size: 20px;
+	padding: 0;
+	border-radius: 0;
+	margin: 0 auto 36px;
+	width: 200px;
+	display: block;
+	font-size: 36px;
+	text-align: center;
+	text-transform: uppercase;
+	height: auto;
+}
+
+.landing input.postcode:focus {
+	background-color: #fff;
+	color: #40382b;
+	border-bottom: 1px solid $main;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+
+.landing input.button {
+	background-color: #fff;
+	color: $main;
+	border: 2px solid $main;
+	padding: 20px;
+	font-size: 12px;
+	text-transform: uppercase;
+	border-radius: 3px;
+	font-weight: 700;
+	width: auto;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	-ms-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+	height: auto;
+}
+
+.landing input.button:hover {
+	background-color: $main;
+	color: #fff;
+	cursor: pointer;
+}
+
 
 
 form {

@@ -59,6 +59,10 @@
 	margin-bottom: 10px;
 }
 
+#brewery_list ul li .details span.name span {
+	color: $main;
+}
+
 #brewery_list ul li .details span.location,
 #brewery_list ul li .details span.brewery_type {
 	text-transform: uppercase;
@@ -196,6 +200,7 @@
 #brewery_list .search input:focus {
 	background-color: #fff;
 	color: #40382b;
+	border-bottom: 1px solid $main;
 }
 
 
