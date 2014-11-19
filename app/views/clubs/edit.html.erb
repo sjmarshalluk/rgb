@@ -1,0 +1,25 @@
+<div class="wrapper">
+
+	<div class="row">
+		<div class="c12">
+			<h1>Add a beer club</h1>
+			<p>Use this form to suggest a beer club for us to list.</p>
+		</div>
+	</div>
+
+	<div class="row">
+		<%= simple_form_for @club do |f| %>
+			<div class="c6">
+				<section>
+					<%= f.input :name, label: "Beer club name" %>
+					<%= f.input :image, label: "Logo" %>
+					<%= f.input :website %>
+					<%= f.input :description %>
+					<%= f.input :user_email %>
+				</section>
+				<%= f.submit %>
+			</div>
+		<% end %>
+	</div>
+
+</div>

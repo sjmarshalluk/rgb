@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :breweries, only: [:index, :new, :create, :show, :edit, :update, :destroy]
   resources :shops, only: [:new, :create, :update, :destroy]
-  resources :clubs, only: [:index, :new, :create, :update, :destroy]
+  resources :clubs, only: [:index, :new, :create, :edit, :update, :destroy]
 
   root "pages#index"
 
