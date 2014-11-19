@@ -646,7 +646,13 @@ nav ul li a {
 
 #home_nav,
 #home_nav a#real:hover {
-	font-size: 80px;
+	font-size: 60px;
+	letter-spacing: -2px;
+	line-height: 70px;
+}
+
+#home_nav div.menu_item {
+	height: 90px;
 }
 
 
