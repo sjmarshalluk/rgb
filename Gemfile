@@ -56,6 +56,5 @@ gem "geocoder"
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 gem 'paperclip'
-gem 'aws-sdk'
 
 ruby '2.1.2'

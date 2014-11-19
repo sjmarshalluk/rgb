@@ -20,3 +20,5 @@ class Brewery < ActiveRecord::Base
 	scope :published, -> { where(approved: true) }
 
 end
+
+
