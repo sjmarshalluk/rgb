@@ -243,9 +243,18 @@
 		padding: 10px 0;
 	}
 
+
+
+}
+
+@media only screen and (max-width: 530px) {
+
+
 	#brewery_list ul li img {
-		display: none;
+		display: none
 	}
+
+
 
 
 }
