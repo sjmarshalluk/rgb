@@ -12,7 +12,7 @@ html {
 }
 
 body {
-	font-family: "Brandon Grotesque", sans-serif;
+	font-family: "brandon-grotesque", sans-serif;
 	color: #40382b;
 	-webkit-font-smoothing: antialiased;
 	font-weight: 500;
@@ -299,9 +299,6 @@ a.button:hover {
 	padding: 0px;
 	height: auto;
 	padding: 20px 0;
-	-moz-box-shadow:    8px 8px #100f0e;
-  	-webkit-box-shadow: 8px 8px #100f0e;
-  	text-shadow:        8px 8px #100f0e;
 }
 
 
@@ -456,7 +453,7 @@ label {
 input,
 textarea,
 select {
-	font-family: "Brandon Grotesque", sans-serif;
+	font-family: "brandon-grotesque", sans-serif;
 	font-size: 16px;
 	width: 100%;
 	padding: 15px 10px;
