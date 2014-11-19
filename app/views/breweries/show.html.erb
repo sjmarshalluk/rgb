@@ -3,25 +3,6 @@
 	
 	<p><%= image_tag @brewery.image.url(:thumb) %></p>
 	<h1><%= @brewery.name %></h1>
-	<p><%= @brewery.brewery_type %></p>
-	<p><%= @brewery.description %></p>
-	<p><%= @brewery.year_opened %></p>
-	<p><%= @brewery.head_brewer %></p>
-	<p><%= @brewery.founder %></p>
-	<p><%= @brewery.seasonals %></p>
-	<p><%= @brewery.changing %></p>
-	<p><%= @brewery.where_to_buy %></p>
-
-	<h2>Contact details</h2>
-	<p><%= @brewery.address_one %>, <%= @brewery.address_two %>, <%= @brewery.city %>, <%= @brewery.county %> <%= @brewery.post_code %></p>
-	<p><%= @brewery.website %></p>
-	<p><%= @brewery.twitter %></p>
-	<p><%= @brewery.facebook %></p>
-	<p><%= @brewery.instagram %></p>
-	<p><%= @brewery.untappd %></p>
-	<p><%= @brewery.ratebeer %></p>
-	<p><%= @brewery.drink_at_brewery %></p>
-	<p><%= @brewery.drink_at_brewery_description %></p>
 
 	
 	<%= image_tag "http://maps.google.com/maps/api/staticmap?size=800x300&sensor=false&zoom=16&markers=#{@brewery.latitude}%2C#{@brewery.longitude}" %>
