@@ -25,7 +25,7 @@ class BreweriesController < ApplicationController
   	@brewery = Brewery.new(brewery_params)
   	if @brewery.save
   		flash[:success] = "Thanks for submitting your brewery. We'll check it over and get it added asap."
-  		redirect_to breweries_path
+  		redirect_to '/breweries/all'
   	else
   		flash[:error] = "That didnt work"
   		render :new
