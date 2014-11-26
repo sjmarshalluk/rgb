@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141115113748) do
+ActiveRecord::Schema.define(version: 20141126145255) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20141115113748) do
     t.string   "county"
     t.string   "post_code"
     t.string   "user_email"
+    t.boolean  "listed"
   end
 
   create_table "clubs", force: true do |t|

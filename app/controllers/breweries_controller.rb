@@ -9,6 +9,10 @@ class BreweriesController < ApplicationController
     @breweries = Brewery.near(params[:search], 20).published
   end
 
+  def londonbrewersmarket
+    @breweries = Brewery.featured
+  end
+
   def show
   	@brewery = Brewery.find(params[:id])
   end
@@ -75,7 +79,8 @@ class BreweriesController < ApplicationController
       :approved,
       :tours,
       :image,
-      :user_email
+      :user_email,
+      :listed
   	)
   end
 

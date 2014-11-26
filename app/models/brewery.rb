@@ -18,6 +18,7 @@ class Brewery < ActiveRecord::Base
 	end
 
 	scope :published, -> { where(approved: true) }
+	scope :featured, -> { where(listed: true) }
 
 end
 

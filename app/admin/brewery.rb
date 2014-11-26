@@ -23,7 +23,8 @@ ActiveAdmin.register Brewery do
       :approved,
       :tours,
       :image,
-      :user_email
+      :user_email,
+      :listed
     ]
     end
   end

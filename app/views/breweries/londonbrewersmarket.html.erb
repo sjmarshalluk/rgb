@@ -1,0 +1,65 @@
+
+
+
+
+
+<div id="brewery_list">
+	<div class="wrapper">
+
+	<div class="row hero">
+		<div class="c8 s2">
+			<h1>London Brewers Market</h1>
+			<p>On the 28th &amp; 29th November 2014, <a href="http://londonbrewersmarket.tumblr.com/" target="_blank">London Brewers Market</a> will be returning to Spitalfields Market. Here are all the breweries that you'll be able to find there.</p>
+		</div>
+	</div>
+
+		<ul class="list">
+		<% @breweries.each do |brewery| %>
+			<li class="brewery">
+				<div class="row">
+					<div class="c12">
+						<%= image_tag brewery.image.url(:thumb) %>
+						<div class="data">
+							<div class="details">
+								<span class="name"><%= link_to "#{brewery.name}", brewery_path(brewery) %></span>  
+
+								<%= link_to "http://maps.google.com/maps?q=#{brewery.latitude},#{brewery.longitude}", :target => '_blank' do %>
+									<span class="location">
+										<% if brewery.city.present? %><%= brewery.city %><% end %><% if brewery.city.present? and brewery.county.present? %>, <% end %><% if brewery.county.present? %><%= brewery.county %><% end %>
+									</span>
+								<% end %>
+								<% if brewery.brewery_type.present? %>
+									<span class="brewery_type">(<%= brewery.brewery_type %>)</span>
+								<% end %>
+							</div>
+							<ul class="links">
+								<% if brewery.twitter.present? %>
+									<li><%= link_to "Twitter", "#{brewery.twitter}", :target => '_blank', class: "twitter"  %></li>
+								<% end %>
+								<% if brewery.facebook.present? %>
+									<li><%= link_to "Facebook", "#{brewery.facebook}", :target => '_blank', class: "facebook"  %></li>
+								<% end %>
+								<% if brewery.instagram.present? %>
+									<li><%= link_to "Instagram", "#{brewery.instagram}", :target => '_blank', class: "instagram"  %></li>
+								<% end %>
+								<% if brewery.untappd.present? %>
+									<li><%= link_to "Untappd", "#{brewery.untappd}", :target => '_blank', class: "untappd"  %></li>
+								<% end %>
+								<% if brewery.ratebeer.present? %>
+									<li><%= link_to "Ratebeer", "#{brewery.ratebeer}", :target => '_blank', class: "ratebeer"  %></li>
+								<% end %>
+								<% if brewery.address_one.present? %>
+									<li><%= link_to "Map", "http://maps.google.com/maps?q=#{brewery.latitude},#{brewery.longitude}", :target => '_blank', class: "map"  %></li>
+								<% end %>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			</li>
+		<% end %>
+		</ul>
+
+	</div>
+</div>
+
