@@ -12,11 +12,16 @@ html {
 }
 
 body {
-	font-family: "brandon-grotesque", sans-serif;
+	font-family: "brandon grotesque", sans-serif;
 	color: #40382b;
 	-webkit-font-smoothing: antialiased;
 	font-weight: 500;
 	height: 100%;
+}
+
+ul.grid img,
+.location img {
+	width: 100%;
 }
 
 header {
@@ -70,8 +75,9 @@ header .row {
 }
 
 h1 {
-	font-size: 2em;
-	margin-bottom: 0.5em;
+	font-size: 36px;
+	font-weight: 900;
+	margin-bottom: 1em;
 }
 
 h2 {
@@ -80,13 +86,16 @@ h2 {
 }
 
 h3 {
-	font-size: 14px;
+	font-size: 16px;
 	text-transform: uppercase;
+	font-weight: 900;
+	margin-bottom: 10px;
 }
 
 p {
 	font-size: 18px;
 	line-height: 1.4;
+	margin-bottom: 1em;
 }
 
 a {
@@ -96,11 +105,15 @@ a {
 	-o-transition: all 0.2s ease-out;
 	-ms-transition: all 0.2s ease-out;
 	transition: all 0.2s ease-out;
+	color: $main;
+}
+
+a:hover {
+	color: $dark;
 }
 
 a.button {
 	background-color: #fff;
-	color: $main;
 	border: 2px solid $main;
 	padding: 20px;
 	font-size: 12px;
@@ -123,6 +136,22 @@ a.button:hover {
 }
 
 
+.hero {
+	text-align: center;
+	margin: 100px 0 60px;
+}
+
+.hero .links {
+	margin-bottom: 30px;
+}
+
+.location {
+	text-align: center;
+}
+
+.location img {
+	margin-bottom: 20px;
+}
 
 
 .success {
@@ -484,6 +513,81 @@ textarea:focus {
     background-color: lighten($main, 40% );
     border: 1px solid $main;
 }
+
+
+
+.links {
+	display: inline-block;
+}
+
+.links li {
+	float: left;
+	margin-right: 20px;
+}
+
+.links a {
+	background-image: url('../assets/icons.png');
+	background-size: 63px 180px;
+	width: 35px;
+	height: 35px;
+	display: block;
+	text-indent: -9999px;
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	-ms-transition: none;
+	transition: none;
+}
+
+.links a.twitter {
+	background-position: 5px 5px;
+	margin-top: 3px;
+}
+
+.links a.twitter:hover {
+	background-position: -25px 5px;
+}
+
+.links a.facebook {
+	background-position: 5px -25px;
+}
+
+.links a.facebook:hover {
+	background-position: -25px -25px;
+}
+
+.links a.instagram {
+	background-position: 5px -55px;
+}
+
+.links a.instagram:hover {
+	background-position: -25px -55px;
+}
+
+.links a.map {
+	background-position: 5px -85px;
+}
+
+.links a.map:hover {
+	background-position: -25px -85px;
+}
+
+.links a.untappd {
+	background-position: 5px -115px;
+}
+
+.links a.untappd:hover {
+	background-position: -25px -115px;
+}
+
+.links a.ratebeer {
+	background-position: 5px -145px;
+}
+
+.links a.ratebeer:hover {
+	background-position: -25px -145px;
+}
+
 
 
 

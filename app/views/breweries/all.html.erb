@@ -22,7 +22,7 @@
 						<%= image_tag brewery.image.url(:thumb) %>
 						<div class="data">
 							<div class="details">
-								<span class="name"><%= link_to "#{brewery.name}", brewery.website, :target => '_blank' %></span>  
+								<span class="name"><%= link_to "#{brewery.name}", brewery_path(brewery) %></span>  
 
 								<%= link_to "http://maps.google.com/maps?q=#{brewery.latitude},#{brewery.longitude}", :target => '_blank' do %>
 									<span class="location">

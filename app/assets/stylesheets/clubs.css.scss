@@ -1,25 +1,2 @@
 
 
-#club_list a {
-	color: $dark;
-}
-
-#club_list span.name a {
-	display: block;
-	font-size: 36px;
-	margin-bottom: 10px;
-}
-
-#club_list span.name a:hover {
-	color: $main;
-}
-
-#club_list img {
-	width: 100%;
-}
-
-#club_list span.description {
-	font-size: 16px;
-	font-weight: 900;
-	line-height: 1.6;
-}

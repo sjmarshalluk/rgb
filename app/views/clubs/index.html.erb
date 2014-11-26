@@ -2,20 +2,21 @@
 
 <div class="wrapper">
 
-	<div class="row">
-		<div class="c8">
+	<div class="row hero">
+		<div class="c8 s2">
 			<h1>Get beer delivered</h1>
 			<p>Over the past few years, there have been a whole host of beer clubs that have opened up. Each of these give you the opportunity to try new beers from the comfort of your own home (or office).</p>
 		</div>
 	</div>
 
-	<div id="club_list" class="row">
-		<ul class="list">
+	<div class="row">
+		<ul class="grid">
 			<% @clubs.each do |club| %>
-				<li class="club c4">
+				<li class="club c3">
 					<%= image_tag club.image.url %>
-					<span class="name"><%= link_to "#{club.name}", club.website, :target => '_blank' %></span>
-					<span class="description"><%= club.description %></span>
+					<h3><%= club.name %></h3>
+					<p><%= club.description %></p>
+					<p><%= link_to "Visit #{club.name}", club.website, :target => '_blank' %></p>
 				</li>
 			<% end %>
 		</ul>

@@ -1,21 +1,50 @@
 
 <div class="wrapper">
 	
-	<p><%= image_tag @brewery.image.url(:thumb) %></p>
-	<h1><%= @brewery.name %></h1>
-
-	
-	<%= image_tag "http://maps.google.com/maps/api/staticmap?size=800x300&sensor=false&zoom=16&markers=#{@brewery.latitude}%2C#{@brewery.longitude}" %>
-	<%= link_to "View on Google Maps", "http://maps.google.com/maps?q=#{@brewery.latitude},#{@brewery.longitude}"  %>
-
-
-
-	<h3>Nearby breweries</h3>
-	<ul>
-	<% for brewery in @brewery.nearbys(10) %>
-	  <li><%= link_to brewery.name, brewery %> (<%= brewery.distance.round(2) %> miles)</li>
-	<% end %>
-	</ul>
-
+	<div class="row hero">
+		<div class="c8 s2">
+			<p><%= image_tag @brewery.image.url(:thumb) %></p>
+			<h1><%= @brewery.name %></h1>
+			<ul class="links">
+				<% if @brewery.twitter.present? %>
+					<li><%= link_to "Twitter", "#{@brewery.twitter}", :target => '_blank', class: "twitter"  %></li>
+				<% end %>
+				<% if @brewery.facebook.present? %>
+					<li><%= link_to "Facebook", "#{@brewery.facebook}", :target => '_blank', class: "facebook"  %></li>
+				<% end %>
+				<% if @brewery.instagram.present? %>
+					<li><%= link_to "Instagram", "#{@brewery.instagram}", :target => '_blank', class: "instagram"  %></li>
+				<% end %>
+				<% if @brewery.untappd.present? %>
+					<li><%= link_to "Untappd", "#{@brewery.untappd}", :target => '_blank', class: "untappd"  %></li>
+				<% end %>
+				<% if @brewery.ratebeer.present? %>
+					<li><%= link_to "Ratebeer", "#{@brewery.ratebeer}", :target => '_blank', class: "ratebeer"  %></li>
+				<% end %>
+			</ul>
+			<p><%= link_to "Go to #{@brewery.name}'s website", @brewery.website, :target => '_blank' %></p>
+		</div>
+	</div>
+	<div class="location">
+		<div class="row">
+			<div class="c6 s3">
+				<%= link_to "http://maps.google.com/maps?q=#{@brewery.latitude},#{@brewery.longitude}", :target =>'_blank'  do %>
+					<%= image_tag "http://maps.google.com/maps/api/staticmap?size=640x300&sensor=false&zoom=16&markers=#{@brewery.latitude}%2C#{@brewery.longitude}" %>
+				<% end %>
+				<p><%= @brewery.address %></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="c6 s3" id="brewery_list">
+				<h3>Nearby breweries</h3>
+				<ul class="list">
+				<% for brewery in @brewery.nearbys(10) %>
+				  <li>
+				  	<%= link_to brewery.name, brewery %> (<%= brewery.distance.round(2) %> miles)</li>
+				<% end %>
+				</ul>
+			</div>
+		</div>
+	</div>
 
 </div>

@@ -41,7 +41,7 @@
 	float: left;
 	font-size: 14px;
 	padding-top: 18px;
-	font-weight: 900;
+	font-weight: 700;
 	margin-left: 10px;
 }
 
@@ -75,74 +75,6 @@
 #brewery_list ul li .links {
 	float: right;
 	padding-top: 12px;
-}
-
-#brewery_list ul li .links li {
-	float: left;
-	margin-right: 20px;
-}
-
-#brewery_list ul li .links a {
-	background-image: url('../assets/icons.png');
-	background-size: 63px 180px;
-	width: 35px;
-	height: 35px;
-	display: block;
-	text-indent: -9999px;
-	-webkit-transition: none;
-	-moz-transition: none;
-	-o-transition: none;
-	-ms-transition: none;
-	transition: none;
-}
-
-#brewery_list ul li .links a.twitter {
-	background-position: 5px 5px;
-	margin-top: 3px;
-}
-
-#brewery_list ul li .links a.twitter:hover {
-	background-position: -25px 5px;
-}
-
-#brewery_list ul li .links a.facebook {
-	background-position: 5px -25px;
-}
-
-#brewery_list ul li .links a.facebook:hover {
-	background-position: -25px -25px;
-}
-
-#brewery_list ul li .links a.instagram {
-	background-position: 5px -55px;
-}
-
-#brewery_list ul li .links a.instagram:hover {
-	background-position: -25px -55px;
-}
-
-#brewery_list ul li .links a.map {
-	background-position: 5px -85px;
-}
-
-#brewery_list ul li .links a.map:hover {
-	background-position: -25px -85px;
-}
-
-#brewery_list ul li .links a.untappd {
-	background-position: 5px -115px;
-}
-
-#brewery_list ul li .links a.untappd:hover {
-	background-position: -25px -115px;
-}
-
-#brewery_list ul li .links a.ratebeer {
-	background-position: 5px -145px;
-}
-
-#brewery_list ul li .links a.ratebeer:hover {
-	background-position: -25px -145px;
 }
 
 
@@ -215,6 +147,8 @@
 .submit_brewery a {
 
 }
+
+
 
 
 
