@@ -49,7 +49,9 @@
 								<% if brewery.ratebeer.present? %>
 									<li><%= link_to "Ratebeer", "#{brewery.ratebeer}", :target => '_blank', class: "ratebeer"  %></li>
 								<% end %>
-								<li><%= link_to "Map", "http://maps.google.com/maps?q=#{brewery.latitude},#{brewery.longitude}", :target => '_blank', class: "map"  %></li>
+								<% if brewery.address_one.present? %>
+									<li><%= link_to "Map", "http://maps.google.com/maps?q=#{brewery.latitude},#{brewery.longitude}", :target => '_blank', class: "map"  %></li>
+								<% end %>
 							</ul>
 						</div>
 					</div>
