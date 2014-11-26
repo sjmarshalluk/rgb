@@ -10,7 +10,7 @@ class BreweriesController < ApplicationController
   end
 
   def londonbrewersmarket
-    @breweries = Brewery.featured
+    @breweries = Brewery.order('name ASC').featured
   end
 
   def show
